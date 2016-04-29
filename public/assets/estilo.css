@@ -31,3 +31,4 @@ form#inicio{
 #tablero .row{ display: block; border-bottom: 1px solid white; overflow: hidden; }
 
 #tablero .row .column{ display: block; border-right: 1px solid white; width: 100px; height: 100px; float: left;}
+#tablero .row .column.barco{ background: white;}
