@@ -20,7 +20,6 @@ end
 
 Given(/^que inicie un juego facil$/) do
   visit '/'
-  click_button("Facil");
 end
 
 When(/^se carga el juego$/) do
