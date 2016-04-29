@@ -5,4 +5,4 @@ Feature:
 
 Scenario: el juego inicia con el barco posicionado en la posicion 1,1
   Given que inicie el juego
-  Then veo el barco en la posicion "A1","B1"
+  Then veo el barco en la posicion "A1","B1","C1"

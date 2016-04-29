@@ -20,7 +20,6 @@ end
 
 Given(/^que inicie un juego facil$/) do
   visit '/'
-  click_button("Facil");
 end
 
 When(/^se carga el juego$/) do
@@ -37,7 +36,8 @@ Given(/^que inicie el juego$/) do
   click_button('iniciar_juego')
 end
 
-Then(/^veo el barco en la posicion "(.*?)","(.*?)"$/) do |pos1,pos2|
+Then(/^veo el barco en la posicion "(.*?)","(.*?)","(.*?)"$/) do |pos1,pos2,pos3|
   last_response.body.should =~ /#{pos1}/m
   last_response.body.should =~ /#{pos2}/m
+  last_response.body.should =~ /#{pos3}/m
 end
