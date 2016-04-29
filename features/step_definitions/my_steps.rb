@@ -23,11 +23,12 @@ Given(/^que inicie un juego facil$/) do
 end
 
 When(/^se carga el juego$/) do
-  visit '/tableroFacil'
+  visit '/'
+  click_button('iniciar_juego')
 end
 
-Then(/^debo ver un tablero  "(.*?)"$/) do |tamanoTablero|
-  last_response.body.should =~ /#{tamanoTablero}/m
+Then(/^debo ver un tablero  "(.*?)"$/) do |mensaje|
+  last_response.body.should =~ /#{mensaje}/m
 end
 
 Given(/^que inicie el juego$/) do
@@ -35,11 +36,8 @@ Given(/^que inicie el juego$/) do
   click_button('iniciar_juego')
 end
 
-Then(/^veo el barco en la posicion x "(.*?)"$/) do |x|
-  last_response.body.should =~ /#{x}/m
-
-end
-
-Then(/^ver y "(.*?)"$/) do |y|
-  last_response.body.should =~ /#{y}/m
+Then(/^veo el barco en la posicion "(.*?)","(.*?)","(.*?)"$/) do |pos1,pos2,pos3|
+  last_response.body.should =~ /#{pos1}/m
+  last_response.body.should =~ /#{pos2}/m
+  last_response.body.should =~ /#{pos3}/m
 end
