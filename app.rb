@@ -7,8 +7,8 @@ end
 
 post '/juego' do
   erb :juego
+end
 
 post '/tableroFacil' do
   erb :tableroFacil
-
 end
