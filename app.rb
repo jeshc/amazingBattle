@@ -6,6 +6,9 @@ end
 
 
 post '/juego' do
+
+  @boton = (params['posicion']) ? params['posicion'].upcase : ''
+
   @eje_y = ['A','B','C','D','E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
   @eje_x = [1,2,3,4,5]
   @matriz = [

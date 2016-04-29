@@ -7,8 +7,8 @@
   </head>
   <body>
     <h1>Tablero</h1>
+    <h2>Has seleccionado <%= @boton %></h2>
     <div id="tablero">
-      <form method="post" action="/juego">
       <% for i in 0..(@matriz.length-1) do %>
         <div class="row" id="row<%= @eje_y[i] %>">
           <% for j in 1..(@matriz[i].length) do %>
@@ -20,12 +20,14 @@
             end
            %>
           <div class="column <%= clase %>" id="aw<%= j %>"><%= @eje_y[i] %><%= j %>
-            <button type="submit" value="<%= @eje_y[i] %><%= j %>" id="boton-<%= @eje_y[i] %><%= j %>" name="boton-<%= @eje_y[i] %><%= j %>"></button>
+            <form method="post" action="/juego">
+              <input type="hidden" name="posicion" id="posicion" value="<%= @eje_y[i] %><%= j %>">
+              <button type="submit id="boton-<%= @eje_y[i] %><%= j %>" name="boton-<%= @eje_y[i] %><%= j %>"></button>
+            </form>
           </div>
           <% end %>
         </div>
       <% end %>
-    </form>
 
   <!--
       <table border="1">
