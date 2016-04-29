@@ -33,4 +33,8 @@ class Tablero
         @tablero[x][y]=2
     end
   end
+
+  def getTablero
+    @tablero
+  end
 end

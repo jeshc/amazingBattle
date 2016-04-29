@@ -41,4 +41,18 @@ describe Tablero do
       resultado.should == 2
   end
 
+  it "Cuando el usuario inicia el juego puede ver el tablero 0's " do
+    tablero = Tablero.new
+    tmpTablero = [
+                [0,0,0,0,0],
+                [0,0,0,0,0],
+                [0,0,0,0,0],
+                [0,0,0,0,0],
+                [1,1,1,0,0]
+              ]
+
+    resultado=tablero.getTablero
+    resultado.should==tmpTablero
+  end
+
 end
