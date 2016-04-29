@@ -4,6 +4,6 @@ get '/' do
   erb :index
 end
 
-post '/tableroFacil' do
+get '/tableroFacil' do
   erb :tableroFacil
 end
