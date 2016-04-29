@@ -1,5 +1,5 @@
 body{ padding:0; margin: 0; background: black; color: white; font-family: monospace;}
-* {box-sizing:border-box;}
+* {box-sizing:border-box; text-align: center;}
 h1{ text-align: center;
     text-transform: uppercase;
     font-size: 40px;
@@ -23,12 +23,17 @@ form#inicio{
 }
 
 #tablero{
+  display: inline-block;
   border: 1px solid white;
-  width: 502px;
-  height: 502px;
   margin: 0 auto;
 }
 #tablero .row{ display: block; border-bottom: 1px solid white; overflow: hidden; }
 
-#tablero .row .column{ display: block; border-right: 1px solid white; width: 100px; height: 100px; float: left;}
+#tablero .row .column{ display: block; border-right: 1px solid white; width: 100px; height: 100px; float: left; position: relative;}
+
+#tablero .row .column button {position: absolute; width: 100%; height: 100%; cursor: pointer; top: 0; left: 0; border-radius: 0; background-color: transparent;}
+
+
 #tablero .row .column.barco{ background: white;}
+#tablero .row .column.miss{ background: gray;}
+#tablero .row .column.hit{ background: red;}

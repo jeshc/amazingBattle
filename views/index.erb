@@ -7,13 +7,7 @@
   </head>
   <body>
     <h1>Bienvenido a AmazingBattle!</h1>
-    <% for i in 1..5 do %>
-      <div class="row" id="row<%= i %>">
-        <% for j in 1..5 do %>
-        <div class="column barco" id="aw<%= j %>"><%= i %><%= j %></div>
-        <% end %>
-      </div>
-    <% end %>
+
     <form method="post" action="/juego" id="inicio">
       <select name="dificultad">
         <option value="Facil">Facil</option>

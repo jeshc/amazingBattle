@@ -8,51 +8,24 @@
   <body>
     <h1>Tablero</h1>
     <div id="tablero">
-
-
-
-      <div class="row" id="rowa">
-        <div class="column barco" id="a1">A1</div>
-        <div class="column" id="a2"></div>
-        <div class="column" id="a3"></div>
-        <div class="column" id="a4"></div>
-        <div class="column" id="a5"></div>
-      </div>
-      <div class="row" id="rowb">
-        <div class="column barco" id="b1">B1</div>
-        <div class="column" id="b2"></div>
-        <div class="column" id="b3"></div>
-        <div class="column" id="b4"></div>
-        <div class="column" id="b5"></div>
-      </div>
-
-      <div class="row" id="rowc">
-        <div class="column barco" id="c1">C1</div>
-        <div class="column" id="c2"></div>
-        <div class="column" id="c3"></div>
-        <div class="column" id="c4"></div>
-        <div class="column" id="c5"></div>
-      </div>
-
-
-      <div class="row" id="rowd">
-        <div class="column" id="d1"></div>
-        <div class="column" id="d2"></div>
-        <div class="column" id="d3"></div>
-        <div class="column" id="d4"></div>
-        <div class="column" id="d5"></div>
-      </div>
-
-
-      <div class="row" id="rowe">
-        <div class="column" id="e1"></div>
-        <div class="column" id="e2"></div>
-        <div class="column" id="e3"></div>
-        <div class="column" id="e4"></div>
-        <div class="column" id="e5"></div>
-      </div>
-    </div>
-
+      <form method="post" action="/juego">
+      <% for i in 0..(@matriz.length-1) do %>
+        <div class="row" id="row<%= @eje_y[i] %>">
+          <% for j in 1..(@matriz[i].length) do %>
+          <% clase = ''
+            case @matriz[i][j]
+              when 1 then clase = 'barco'
+              when 2 then clase = 'hit'
+              when 3 then clase = 'miss'
+            end
+           %>
+          <div class="column <%= clase %>" id="aw<%= j %>"><%= @eje_y[i] %><%= j %>
+            <button type="submit" value="<%= @eje_y[i] %><%= j %>" id="boton-<%= @eje_y[i] %><%= j %>" name="boton-<%= @eje_y[i] %><%= j %>"></button>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </form>
 
   <!--
       <table border="1">
