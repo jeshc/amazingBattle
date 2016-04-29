@@ -1,9 +1,24 @@
 class Barco
 
-  def initialize
-    @tamanoBarco = 0
-    @posini = [0,0]
-    @posfin = [0,0]
+  @@limite_intentos = 5
+
+  def restarIntento
+    @@limite_intentos -= 1
   end
+
+
+  def definirMensaje valor
+    mensaje = ''
+
+    case valor
+      when 2 then mensaje = 'Atinaste!'
+      when 3 then mensaje = 'No atinaste!'
+    end
+
+    mensaje
+  end
+
+
+
 
 end

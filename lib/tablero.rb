@@ -13,6 +13,7 @@ class Tablero
               ]
   end
 
+
   def getValue x,y
     @tablero[x][y]
   end

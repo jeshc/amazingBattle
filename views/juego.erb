@@ -8,10 +8,11 @@
   <body>
     <h1>Tablero</h1>
     <h2>Has seleccionado <%= @boton %></h2>
+    <h3><%= @mensaje %></h3>
     <div id="tablero">
       <% for i in 0..(@matriz.length-1) do %>
         <div class="row" id="row<%= @eje_y[i] %>">
-          <% for j in 1..(@matriz[i].length) do %>
+          <% for j in 0..(@matriz[i].length-1) do %>
           <% clase = ''
             case @matriz[i][j]
               when 1 then clase = 'barco'
@@ -19,26 +20,16 @@
               when 3 then clase = 'miss'
             end
            %>
-          <div class="column <%= clase %>" id="aw<%= j %>"><%= @eje_y[i] %><%= j %>
+          <div class="column <%= clase %>" id="aw<%= j %>"><%= @eje_y[i] %><%= j+1 %>
             <form method="post" action="/juego">
-              <input type="hidden" name="posicion" id="posicion" value="<%= @eje_y[i] %><%= j %>">
-              <button type="submit id="boton-<%= @eje_y[i] %><%= j %>" name="boton-<%= @eje_y[i] %><%= j %>"></button>
+              <input type="hidden" name="posicion" id="posicion" value="<%= i %><%= j %>">
+              <input type="hidden" name="boton" id="boton" value="<%= @eje_y[i] %><%= j+1 %>">
+              <button type="submit id="boton-<%= @eje_y[i] %><%= j+1 %>" name="boton-<%= @eje_y[i] %><%= j+1 %>"></button>
             </form>
           </div>
           <% end %>
         </div>
       <% end %>
-
-  <!--
-      <table border="1">
-        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td>A1 B1</td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-      </table>-->
-
-
     </div>
   </body>
 </html>
