@@ -27,4 +27,18 @@ describe Tablero do
     resultado = tablero.getValue 0,0
     resultado.should == 3
   end
+
+  it "cuando el usuario tira en una posicion que no hay nada la celda debe ser 3" do
+      tablero = Tablero.new
+      tablero.tirar 3,3
+      resultado=tablero.getValue 3,3
+      resultado.should == 3
+  end
+  it "cuando el usuario tira en una posicion que SI hay nada la celda debe ser 2" do
+      tablero = Tablero.new
+      tablero.tirar 4,0
+      resultado=tablero.getValue 4,0
+      resultado.should == 2
+  end
+
 end
