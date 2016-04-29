@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Given(/^que abro la aplicacion$/) do
   visit '/'
 end
@@ -17,7 +16,8 @@ end
 
 Then(/^debo ver "(.*?)"$/) do |mensaje|
   last_response.body.should =~ /#{mensaje}/m
-=======
+end
+
 Given(/^que inicie un juego facil$/) do
   visit '/'
   click_button("Facil");
@@ -29,5 +29,13 @@ end
 
 Then(/^debo ver un tablero  "(.*?)"$/) do |tamanoTablero|
   last_response.body.should =~ /#{tamanoTablero}/m
->>>>>>> e8d2c9aa53c8e66c9a6a65aa3f240dc1ec07787e
+end
+
+Given(/^que inicie el juego$/) do
+  visit '/'
+  click_button('iniciar_juego')
+end
+
+Then(/^veo el barco en la posicion "(.*?)","(.*?)"$/) do |arg1, arg2|
+  pending # express the regexp above with the code you wish you had
 end
