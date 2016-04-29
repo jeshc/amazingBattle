@@ -28,7 +28,8 @@ When(/^se carga el juego$/) do
 end
 
 Then(/^debo ver un tablero  "(.*?)"$/) do |tamanoTablero|
-  last_response.body.should =~ /#{tamanoTablero}/m
+  pending
+  #last_response.body.should =~ /#{tamanoTablero}/m
 end
 
 Given(/^que inicie el juego$/) do
@@ -36,6 +37,7 @@ Given(/^que inicie el juego$/) do
   click_button('iniciar_juego')
 end
 
-Then(/^veo el barco en la posicion "(.*?)","(.*?)"$/) do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+Then(/^veo el barco en la posicion "(.*?)","(.*?)"$/) do |pos1,pos2|
+  last_response.body.should =~ /#{pos1}/m
+  last_response.body.should =~ /#{pos2}/m
 end

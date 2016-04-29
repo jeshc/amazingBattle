@@ -1,5 +1,5 @@
 body{ padding:0; margin: 0; background: black; color: white; font-family: monospace;}
-
+* {box-sizing:border-box;}
 h1{ text-align: center;
     text-transform: uppercase;
     font-size: 40px;
@@ -21,3 +21,13 @@ form#inicio{
   margin: 20px 0 0;
   text-align: center;
 }
+
+#tablero{
+  border: 1px solid white;
+  width: 502px;
+  height: 502px;
+  margin: 0 auto;
+}
+#tablero .row{ display: block; border-bottom: 1px solid white; overflow: hidden; }
+
+#tablero .row .column{ display: block; border-right: 1px solid white; width: 100px; height: 100px; float: left;}
