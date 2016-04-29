@@ -1,6 +1,6 @@
-describe barco do
+require './lib/barco'
+describe Barco do
   it "El juego inicia" do
-    adivinar = Adivinar.new
-    adivinar.getPalabraOculta.should == "------"
-    adivinar.getIntentos.should == "Intentos restantes 6"
+    barco = Barco.new
   end
+end
