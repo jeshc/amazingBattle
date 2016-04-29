@@ -23,12 +23,12 @@ Given(/^que inicie un juego facil$/) do
 end
 
 When(/^se carga el juego$/) do
-  visit '/tableroFacil'
+  visit '/'
+  click_button('iniciar_juego')
 end
 
-Then(/^debo ver un tablero  "(.*?)"$/) do |tamanoTablero|
-  pending
-  #last_response.body.should =~ /#{tamanoTablero}/m
+Then(/^debo ver un tablero  "(.*?)"$/) do |mensaje|
+  last_response.body.should =~ /#{mensaje}/m
 end
 
 Given(/^que inicie el juego$/) do
