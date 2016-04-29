@@ -23,6 +23,6 @@ class Tablero
   end
 
   def marcarCelda x, y, valor
-    @tablero[x,y] = valor
+    @tablero[x][y] = valor
   end
 end
