@@ -35,6 +35,11 @@ Given(/^que inicie el juego$/) do
   click_button('iniciar_juego')
 end
 
-Then(/^veo el barco en la posicion "(.*?)","(.*?)"$/) do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+Then(/^veo el barco en la posicion x "(.*?)"$/) do |x|
+  last_response.body.should =~ /#{x}/m
+
+end
+
+Then(/^ver y "(.*?)"$/) do |y|
+  last_response.body.should =~ /#{y}/m
 end
