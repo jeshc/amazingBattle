@@ -1,7 +1,7 @@
 class Tablero
 
 
-  def initialize(argument)
+  def initialize
     @tamanoTablero
     @valoresTablero = [0,1,2,3]
     @tablero = [
@@ -13,6 +13,10 @@ class Tablero
               ]
   end
 
+  def getValue x,y
+    @tablero[x][y]
+  end
+
   def defineTamano dimension
     #
     @tamanoTablero = dimension
@@ -20,6 +24,5 @@ class Tablero
 
   def marcarCelda x, y, valor
     @tablero[x,y] = valor
-
   end
 end
